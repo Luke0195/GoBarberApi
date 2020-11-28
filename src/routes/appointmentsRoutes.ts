@@ -26,9 +26,9 @@ appointmentsRoutes.post('/', async (request, response) => {
       date: parsedDate,
     });
 
-    response.json(appointment);
+    return response.json(appointment);
   } catch (error) {
-    response.status(400).json(error);
+    return response.status(400).json(error);
   }
 });
 
