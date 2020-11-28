@@ -8,6 +8,7 @@ usersRoutes.post('/', async (request, response) => {
     const { name, email, password } = request.body;
     const createUserService = new CreateUserService();
     const user = await createUserService.execute({ name, email, password });
+    delete user.password;
     response.json(user);
   } catch (error) {
     response.status(400).json({ error: error.message });
