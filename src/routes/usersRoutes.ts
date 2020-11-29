@@ -1,8 +1,11 @@
-import { request, Router } from 'express';
+import { Router } from 'express';
+import multer from 'multer';
+import uploadConfig from '../config/uploads';
 import CreateUserService from '../services/CreateUserService';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRoutes = Router();
+const upload = multer(uploadConfig);
 
 usersRoutes.post('/', async (request, response) => {
   try {
@@ -16,7 +19,13 @@ usersRoutes.post('/', async (request, response) => {
   }
 });
 
-usersRoutes.patch('/avatar', ensureAuthenticated, (request, response) => {
-  response.json({ message: 'Rota de imagem' });
-});
+usersRoutes.patch(
+  '/avatar',
+  ensureAuthenticated,
+  upload.single('avatar'),
+  (request, response) => {
+    console.log(request.file);
+    response.json({ message: 'Rota de imagem' });
+  }
+);
 export default usersRoutes;
