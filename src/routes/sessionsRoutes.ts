@@ -14,7 +14,7 @@ sessionsRoutes.post('/', async (request, response) => {
     delete user.password;
     response.json({ user, token });
   } catch (error) {
-    response.json({ error: error.message });
+    response.status(error.statusCode).json({ error: error.message });
   }
 });
 
