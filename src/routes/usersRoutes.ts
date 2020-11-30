@@ -3,6 +3,7 @@ import multer from 'multer';
 import uploadConfig from '../config/uploads';
 import CreateUserService from '../services/CreateUserService';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 
 const usersRoutes = Router();
 const upload = multer(uploadConfig);
@@ -23,9 +24,19 @@ usersRoutes.patch(
   '/avatar',
   ensureAuthenticated,
   upload.single('avatar'),
-  (request, response) => {
-    console.log(request.file);
-    response.json({ message: 'Rota de imagem' });
+  async (request, response) => {
+    try {
+      const updatedUserAvatarService = new UpdateUserAvatarService();
+      const user = await updatedUserAvatarService.execute({
+        user_id: request.user.id,
+        avatarFilename: request.file.filename,
+      });
+
+      delete user.password;
+      response.json(user);
+    } catch (error) {
+      response.status(400).json({ error: error.message });
+    }
   }
 );
 export default usersRoutes;
