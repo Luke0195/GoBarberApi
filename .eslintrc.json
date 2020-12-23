@@ -21,7 +21,19 @@
     "rules": {
       "@typescript-eslint/no-unused-vars":["error",{
         "argsIgnorePattern": "_"
-      }]
+      }],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+          }
+        }
+      ],
+
       "camelcase": "off",
       "class-methods-use-this": "off",
       "prettier/prettier":"error",
