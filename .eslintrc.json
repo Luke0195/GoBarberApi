@@ -1,7 +1,8 @@
 {
     "env": {
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
       "airbnb-base",
@@ -19,10 +20,12 @@
         "prettier"
     ],
     "rules": {
+      "import/no-extraneous-dependencies":"off",
       "no-useless-constructor":"off",
       "@typescript-eslint/no-unused-vars":["off",{
         "argsIgnorePattern": "_"
       }],
+      "@typescript-eslint/no-var-requires":"off",
       "@typescript-eslint/naming-convention": [
         "error",
         {
