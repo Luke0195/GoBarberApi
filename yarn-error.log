@@ -1,5 +1,5 @@
 Arguments: 
-  /home/lucassantos/.nvm/versions/node/v14.15.3/bin/node /usr/share/yarn/bin/yarn.js add resolveJsonModule -D
+  /home/lucassantos/.nvm/versions/node/v14.15.3/bin/node /usr/share/yarn/bin/yarn.js add git-commit msg-linter -D
 
 PATH: 
   /home/lucassantos/.zinit/polaris/bin:/home/lucassantos/.nvm/versions/node/v14.15.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lucassantos/Android/Sdk/emulator:/home/lucassantos/Android/Sdk/tools:/home/lucassantos/Android/Sdk/tools/bin:/home/lucassantos/Android/Sdk/platform-tools:/home/lucassantos/android-studio/bin:/home/lucassantos/Android/Sdk/emulator:/home/lucassantos/Android/Sdk/tools:/home/lucassantos/Android/Sdk/tools/bin:/home/lucassantos/Android/Sdk/platform-tools:/home/lucassantos/android-studio/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/resolveJsonModule: Not found
+  Error: https://registry.yarnpkg.com/msg-linter: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66988:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140749:22)
       at Request.emit (events.js:315:20)
