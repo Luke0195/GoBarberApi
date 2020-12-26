@@ -1,5 +1,4 @@
 import { startOfHour } from 'date-fns';
-
 import { injectable, inject } from 'tsyringe';
 import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
 import AppoinmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentRepository';
